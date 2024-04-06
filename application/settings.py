@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-vu4ay_76t+6drg$q@7g!k)ob2pt@x3=spr!2!+tsexhiu&siy8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,12 +82,24 @@ WSGI_APPLICATION = 'application.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd1g0n6p6cnr34e', 
+        'USER': 'u8lloava9he9e9',
+        'PASSWORD': 'pe66647fb6409a2308d27e9fc9b94007e0aa0c8ceb6a799d43d8220752a8bc12f',
+        'HOST': 'c7gljno857ucsl.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com', 
+        'PORT': '5432',
     }
 }
+
 
 # DATABASES = {
 #     'default': {
@@ -103,11 +115,11 @@ DATABASES = {
 # Email Setting
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.jexceltech.com.ng'
+EMAIL_HOST = 'mail.elmobilitygt.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'admin@jexceltech.com.ng'
-EMAIL_HOST_PASSWORD = 'Adeolu967@321'
+EMAIL_HOST_USER = 'testing@elmobilitygt.com'
+EMAIL_HOST_PASSWORD = 'Update@321'
 
  
 
