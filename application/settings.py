@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,6 +75,7 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'application.asgi.application'
 WSGI_APPLICATION = 'application.wsgi.application'
 
 
@@ -86,6 +88,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'scrapleet',
+#         'USER': 'root',
+#         'PASSWORD': 'Adeoluwa',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
 # Email Setting
 

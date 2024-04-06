@@ -48,13 +48,13 @@
                 <span>Dashboard</span>
               </a>
               <!-- <ul class="geex-sidebar__submenu">
-								<li class="geex-sidebar__menu__item">
-									<a href="{% url 'home' %}" class="geex-sidebar__menu__link">Management</a>
-								</li>
-							</ul> -->
+                <li class="geex-sidebar__menu__item">
+                  <a href="{% url 'home' %}" class="geex-sidebar__menu__link">Management</a>
+                </li>
+              </ul> -->
             </li>
-
-            <li class="geex-sidebar__menu__item has-children">
+  
+            <!-- <li class="geex-sidebar__menu__item has-children">
               <a href="#" class="geex-sidebar__menu__link">
                 <svg
                   width="22"
@@ -105,8 +105,34 @@
                   >
                 </li>
               </ul>
+            </li> -->
+  
+            <li class="geex-sidebar__menu__item has-children">
+              <a href="{% url 'addfund' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 512 512"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 0C114.617 0 0 114.615 0 256s114.617 256 256 256 256-114.615 256-256S397.383 0 256 0zm0 471.838c-121.924 0-221.839-99.915-221.839-221.839S134.076 28.158 256 28.158 477.839 128.073 477.839 250 377.924 471.838 256 471.838z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M310.223 225.981H201.776c-11.047 0-20.002 8.955-20.002 20.002v39.171c0 4.951 4.022 8.972 8.972 8.972h131.507c4.951 0 8.972-4.022 8.972-8.972v-39.171c-.001-11.047-8.956-20.002-20.003-20.002z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M256 167.196c-58.968 0-106.691 47.724-106.691 106.684s47.723 106.684 106.691 106.684c58.96 0 106.684-47.724 106.684-106.684S314.96 167.196 256 167.196zm0 184.9c-39.614 0-71.817-32.206-71.817-71.816 0-39.611 32.203-71.817 71.817-71.817 39.61 0 71.816 32.206 71.816 71.817 0 39.61-32.206 71.816-71.816 71.816z"
+                    fill="#B9BBBD"
+                  />
+                </svg>
+                <span>Add Fund</span>
+              </a>
             </li>
-
+  
             <li class="geex-sidebar__menu__item has-children">
               <a href="#" class="geex-sidebar__menu__link">
                 <svg
@@ -149,8 +175,17 @@
                   >
                 </li>
                 <li class="geex-sidebar__menu__item">
-                  <a href="#" class="geex-sidebar__menu__link"
-                    >Telegram Memeber Scrapper</a
+                  <a
+                    href="{% url 'scrape_telegram_users' %}"
+                    class="geex-sidebar__menu__link"
+                    >Telegram Member Scrapper</a
+                  >
+                </li>
+                <li class="geex-sidebar__menu__item">
+                  <a
+                    href="{% url 'telegram_account_list' %}"
+                    class="geex-sidebar__menu__link"
+                    >Telegram Member Account</a
                   >
                 </li>
                 <li class="geex-sidebar__menu__item">
@@ -159,55 +194,130 @@
                   >
                 </li>
                 <li class="geex-sidebar__menu__item">
+                  <a
+                    href="{% url 'telegram_adder' %}"
+                    class="geex-sidebar__menu__link"
+                    >Add Telegram Members</a
+                  >
+                </li>
+                <li class="geex-sidebar__menu__item">
                   <a href="#" class="geex-sidebar__menu__link">Chat Bot</a>
                 </li>
               </ul>
             </li>
-
-            <!-- <li class="geex-sidebar__menu__item has-children">
-							<a href="#" class="geex-sidebar__menu__link">
-								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<g clip-path="url(#clip0_1141_9730)">
-									<path d="M20.6108 10.0608L10.9996 15.8285L1.3883 10.0608C1.17983 9.93573 0.930209 9.89858 0.694351 9.95755C0.458493 10.0165 0.255718 10.1668 0.130635 10.3752C0.0055526 10.5837 -0.0315922 10.8333 0.0273724 11.0692C0.0863369 11.305 0.236581 11.5078 0.445052 11.6329L10.5284 17.6829C10.671 17.7686 10.8341 17.8138 11.0005 17.8138C11.1668 17.8138 11.33 17.7686 11.4726 17.6829L21.5559 11.6329C21.7644 11.5078 21.9146 11.305 21.9736 11.0692C22.0325 10.8333 21.9954 10.5837 21.8703 10.3752C21.7452 10.1668 21.5424 10.0165 21.3066 9.95755C21.0707 9.89858 20.8211 9.93573 20.6126 10.0608H20.6108Z" fill="#B9BBBD"/>
-									<path d="M20.6108 14.2476L10.9995 20.0143L1.3883 14.2476C1.28507 14.1856 1.17066 14.1446 1.05159 14.1269C0.932525 14.1092 0.811133 14.1151 0.694348 14.1443C0.577563 14.1735 0.467672 14.2254 0.37095 14.2971C0.274227 14.3688 0.192567 14.4588 0.130633 14.562C0.0686979 14.6652 0.0277013 14.7796 0.00998337 14.8987C-0.00773452 15.0178 -0.00182666 15.1392 0.0273696 15.256C0.0863342 15.4918 0.236578 15.6946 0.445049 15.8197L10.5284 21.8697C10.671 21.9553 10.8341 22.0006 11.0005 22.0006C11.1668 22.0006 11.33 21.9553 11.4725 21.8697L21.5559 15.8197C21.7644 15.6946 21.9146 15.4918 21.9736 15.256C22.0325 15.0201 21.9954 14.7705 21.8703 14.562C21.7452 14.3535 21.5424 14.2033 21.3066 14.1443C21.0707 14.0854 20.8211 14.1225 20.6126 14.2476H20.6108Z" fill="#B9BBBD"/>
-									<path d="M10.9997 13.5424C10.5052 13.5421 10.0201 13.4074 9.59629 13.1528L0.444293 7.66104C0.308762 7.57955 0.19662 7.46437 0.118767 7.32672C0.0409147 7.18906 0 7.0336 0 6.87546C0 6.71731 0.0409147 6.56186 0.118767 6.4242C0.19662 6.28654 0.308762 6.17137 0.444293 6.08987L9.59629 0.598125C10.0201 0.343501 10.5053 0.208984 10.9997 0.208984C11.4942 0.208984 11.9793 0.343501 12.4031 0.598125L21.5551 6.08987C21.6907 6.17137 21.8028 6.28654 21.8807 6.4242C21.9585 6.56186 21.9994 6.71731 21.9994 6.87546C21.9994 7.0336 21.9585 7.18906 21.8807 7.32672C21.8028 7.46437 21.6907 7.57955 21.5551 7.66104L12.4031 13.1528C11.9793 13.4074 11.4942 13.5421 10.9997 13.5424ZM2.69838 6.87546L10.5414 11.5807C10.6799 11.6636 10.8383 11.7073 10.9997 11.7073C11.1611 11.7073 11.3195 11.6636 11.458 11.5807L19.301 6.87546L11.458 2.17021C11.3195 2.08735 11.1611 2.04359 10.9997 2.04359C10.8383 2.04359 10.6799 2.08735 10.5414 2.17021L2.69838 6.87546Z" fill="#B9BBBD"/>
-									</g>
-									<defs>
-									<clipPath id="clip0_1141_9730">
-									<rect width="22" height="22" fill="white"/>
-									</clipPath>
-									</defs>
-								</svg>							
-								<span>Features</span>
-							</a>  
-							<ul class="geex-sidebar__submenu">
-								<li class="geex-sidebar__menu__item">
-									<a href="chart.html" class="geex-sidebar__menu__link">Chart</a>
-								</li>
-								<li class="geex-sidebar__menu__item">
-									<a href="badge.html" class="geex-sidebar__menu__link">Badge</a>
-								</li>
-								<li class="geex-sidebar__menu__item">
-									<a href="button.html" class="geex-sidebar__menu__link">Button</a>
-								</li>
-								<li class="geex-sidebar__menu__item">
-									<a href="color.html" class="geex-sidebar__menu__link">Color</a>
-								</li>
-								<li class="geex-sidebar__menu__item">
-									<a href="form.html" class="geex-sidebar__menu__link">Form</a>
-								</li>
-								<li class="geex-sidebar__menu__item">
-									<a href="icon.html" class="geex-sidebar__menu__link">Icon</a>
-								</li>
-								<li class="geex-sidebar__menu__item">
-									<a href="navigation.html" class="geex-sidebar__menu__link">Navigation</a>
-								</li>
-								<li class="geex-sidebar__menu__item">
-									<a href="typography.html" class="geex-sidebar__menu__link">Typography</a>
-								</li>
-							</ul>
-						</li> -->
-
+  
+            <li class="geex-sidebar__menu__item has-children">
+              <a href="{% url 'services' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 512 512"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 512c-68.38 0-132.865-26.629-181.02-74.98C26.63 388.865 0 324.38 0 256s26.63-132.865 74.98-181.02C123.135 26.63 187.62 0 256 0s132.865 26.63 181.02 74.98C485.37 123.135 512 187.62 512 256s-26.63 132.865-74.98 181.02C388.865 485.37 324.38 512 256 512zm0-480c-123.71 0-224 100.29-224 224s100.29 224 224 224 224-100.29 224-224S379.71 32 256 32z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M384 192h-64v-64c0-17.673-14.327-32-32-32s-32 14.327-32 32v64h-64c-17.673 0-32 14.327-32 32s14.327 32 32 32h64v64c0 17.673 14.327 32 32 32s32-14.327 32-32v-64h64c17.673 0 32-14.327 32-32s-14.327-32-32-32z"
+                    fill="#B9BBBD"
+                  />
+                </svg>
+                <span>Services</span>
+              </a>
+            </li>
+  
+            <li class="geex-sidebar__menu__item has-children">
+              <a href="{% url 'orders' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.41667 0H3.66667C2.69421 0 1.76158 0.386308 1.07394 1.07394C0.386308 1.76158 0 2.69421 0 3.66667L0 6.41667C0 7.38913 0.386308 8.32176 1.07394 9.00939C1.76158 9.69702 2.69421 10.0833 3.66667 10.0833H6.41667C7.38913 10.0833 8.32176 9.69702 9.00939 9.00939C9.69702 8.32176 10.0833 7.38913 10.0833 6.41667V3.66667C10.0833 2.69421 9.69702 1.76158 9.00939 1.07394C8.32176 0.386308 7.38913 0 6.41667 0V0ZM8.25 6.41667C8.25 6.9029 8.05684 7.36921 7.71303 7.71303C7.36921 8.05684 6.9029 8.25 6.41667 8.25H3.66667C3.18044 8.25 2.71412 8.05684 2.3703 7.71303C2.02649 7.36921 1.83333 6.9029 1.83333 6.41667V3.66667C1.83333 3.18044 2.02649 2.71412 2.3703 2.3703C2.71412 2.02649 3.18044 1.83333 3.66667 1.83333H6.41667C6.9029 1.83333 7.36921 2.02649 7.71303 2.3703C8.05684 2.71412 8.25 3.18044 8.25 3.66667V6.41667Z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M18.3327 0H15.5827C14.6102 0 13.6776 0.386309 12.99 1.07394C12.3023 1.76158 11.916 2.69421 11.916 3.66667V6.41667C11.916 7.38913 12.3023 8.32176 12.99 9.0094C13.6776 9.69703 14.6102 10.0833 15.5827 10.0833H18.3327C19.3051 10.0833 20.2378 9.69703 20.9254 9.0094C21.613 8.32176 21.9993 7.38913 21.9993 6.41667V3.66667C21.9993 2.69421 21.613 1.76158 20.9254 1.07394C20.2378 0.386309 19.3051 0 18.3327 0V0ZM20.166 6.41667C20.166 6.9029 19.9728 7.36922 19.629 7.71303C19.2852 8.05685 18.8189 8.25 18.3327 8.25H15.5827C15.0964 8.25 14.6301 8.05685 14.2863 7.71303C13.9425 7.36922 13.7493 6.9029 13.7493 6.41667V3.66667C13.7493 3.18044 13.9425 2.71412 14.2863 2.37031C14.6301 2.02649 15.0964 1.83333 15.5827 1.83333H18.3327C18.8189 1.83333 19.2852 2.02649 19.629 2.37031C19.9728 2.71412 20.166 3.18044 20.166 3.66667V6.41667Z"
+                    fill="#B9BBBD"
+                  />
+                </svg>
+                <span>Orders</span>
+              </a>
+            </li>
+  
+            <li class="geex-sidebar__menu__item has-children">
+              <a href="{% url 'mass_orders' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 512 512"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M480 0H32C14.327 0 0 14.327 0 32v416c0 17.673 14.327 32 32 32h448c17.673 0 32-14.327 32-32V32c0-17.673-14.327-32-32-32zm-16 448H48V64h416v384z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M368 160h-16v-16c0-8.837-7.163-16-16-16s-16 7.163-16 16v16h-16c-8.837 0-16 7.163-16 16s7.163 16 16 16h16v16c0 8.837 7.163 16 16 16s16-7.163 16-16v-16h16c8.837 0 16-7.163 16-16s-7.163-16-16-16zm0 80h-16v-32h16v32z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M336 272h-16v-16c0-8.837-7.163-16-16-16s-16 7.163-16 16v16h-16c-8.837 0-16 7.163-16 16s7.163 16 16 16h16v16c0 8.837 7.163 16 16 16s16-7.163 16-16v-16h16c8.837 0 16-7.163 16-16s-7.163-16-16-16zm0 80h-16v-32h16v32z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M304 384h-16v-16c0-8.837-7.163-16-16-16s-16 7.163-16 16v16h-16c-8.837 0-16 7.163-16 16s7.163 16 16 16h16v16c0 8.837 7.163 16 16 16s16-7.163 16-16v-16h16c8.837 0 16-7.163 16-16s-7.163-16-16-16zm0 80h-16v-32h16v32z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M448 272h-48v-16c0-8.837-7.163-16-16-16h-16v-16c0-8.837-7.163-16-16-16h-32v-16c0-8.837-7.163-16-16-16s-16 7.163-16 16v16h-48c-8.837 0-16 7.163-16 16v288c0 8.837 7.163 16 16 16h176c8.837 0 16-7.163 16-16v-48h64v48c0 8.837 7.163 16 16 16h48c8.837 0 16-7.163 16-16V288c0-8.837-7.163-16-16-16zm-64 16h-32v-16h32v16zm0-32h-48v-16h48v16zm64 32h-48v-16h48v16zm0-32h-64v-16h64v16zm0 96h-64v-16h64v16zm0-32h-48v-16h48v16z"
+                    fill="#B9BBBD"
+                  />
+                </svg>
+                <span>Mass Order</span>
+              </a>
+            </li>
+  
+            <li class="geex-sidebar__menu__item has-children">
+              <a href="{% url 'new_orders' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 512 512"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M480 0H32C14.327 0 0 14.327 0 32v416c0 17.673 14.327 32 32 32h448c17.673 0 32-14.327 32-32V32c0-17.673-14.327-32-32-32zm-16 448H48V64h416v384z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M368 160h-16v-16c0-8.837-7.163-16-16-16s-16 7.163-16 16v16h-16c-8.837 0-16 7.163-16 16s7.163 16 16 16h16v16c0 8.837 7.163 16 16 16s16-7.163 16-16v-16h16c8.837 0 16-7.163 16-16s-7.163-16-16-16zm0 80h-16v-32h16v32z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M336 272h-16v-16c0-8.837-7.163-16-16-16s-16 7.163-16 16v16h-16c-8.837 0-16 7.163-16 16s7.163 16 16 16h16v16c0 8.837 7.163 16 16 16s16-7.163 16-16v-16h16c8.837 0 16-7.163 16-16s-7.163-16-16-16zm0 80h-16v-32h16v32z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M304 384h-16v-16c0-8.837-7.163-16-16-16s-16 7.163-16 16v16h-16c-8.837 0-16 7.163-16 16s7.163 16 16 16h16v16c0 8.837 7.163 16 16 16s16-7.163 16-16v-16h16c8.837 0 16-7.163 16-16s-7.163-16-16-16zm0 80h-16v-32h16v32z"
+                    fill="#B9BBBD"
+                  />
+                  <path
+                    d="M448 272h-48v-16c0-8.837-7.163-16-16-16h-16v-16c0-8.837-7.163-16-16-16h-32v-16c0-8.837-7.163-16-16-16s-16 7.163-16 16v16h-48c-8.837 0-16 7.163-16 16v288c0 8.837 7.163 16 16 16h176c8.837 0 16-7.163 16-16v-48h64v48c0 8.837 7.163 16 16 16h48c8.837 0 16-7.163 16-16V288c0-8.837-7.163-16-16-16zm-64 16h-32v-16h32v16zm0-32h-48v-16h48v16zm64 32h-48v-16h48v16zm0-32h-64v-16h64v16zm0 96h-64v-16h64v16zm0-32h-48v-16h48v16z"
+                    fill="#B9BBBD"
+                  />
+                </svg>
+                <span>New Order</span>
+              </a>
+            </li>
+  
             <li class="geex-sidebar__menu__item has-children">
               <a href="#" class="geex-sidebar__menu__link">
                 <svg
@@ -261,16 +371,118 @@
                 </li>
               </ul>
             </li>
+  
+            <li class="geex-sidebar__menu__item has-children">
+              <a href="{% url 'makemoney' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0ZM7 14H15V16H7V14ZM17 10C17 11.1046 16.1046 12 15 12C13.8954 12 13 11.1046 13 10C13 8.89543 13.8954 8 15 8C16.1046 8 17 8.89543 17 10ZM10 8C11.1046 8 12 8.89543 12 10C12 11.1046 11.1046 12 10 12C8.89543 12 8 11.1046 8 10C8 8.89543 8.89543 8 10 8Z"
+                    fill="#B9BBBD"
+                  />
+                </svg>
+                <span>Make Money</span>
+              </a>
+            </li>
+  
+            <li class="geex-sidebar__menu__item has-children">
+              <a href="{% url 'howtouse' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3 4V18H19V4H3ZM5 6H17V16H5V6ZM7 8H15V12H7V8Z"
+                    fill="#B9BBBD"
+                  />
+                </svg>
+                <span>How to Use</span>
+              </a>
+            </li>
+  
+            <li class="geex-sidebar__menu__item has-children">
+              <a href="{% url 'update' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.0001 1C17.5145 1 22.0001 5.48563 22.0001 11C22.0001 16.5144 17.5145 21 12.0001 21C9.8357 21 7.8122 20.2034 6.28919 18.9595L7.70231 17.5464C9.03588 18.5613 10.9721 19.1667 12.9999 19.1667C16.8503 19.1667 20.0001 15.9864 20.0001 12.1667C20.0001 8.34704 16.8503 5.16669 12.9999 5.16669C11.6894 5.16669 10.4707 5.65267 9.49958 6.51709H12.0001V9.83335H1.66675V1.83335H5.00008V4.96488C6.82614 3.27908 9.17384 2.16669 12.0001 2.16669Z"
+                    fill="#B9BBBD"
+                  />
+                </svg>
+                <span>Update</span>
+              </a>
+            </li>
+  
+            <li class="geex-sidebar__menu__item">
+              <a href="#" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 512 512"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="512" height="512" rx="256" fill="#00A3F7" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M227.987 363.605L174.087 308.04C166.397 301.808 166.773 290.197 174.717 285.485L383.606 175.04C390.198 170.745 397.048 174.555 396.89 182.26V391.92C397.06 399.293 389.079 402.692 384.79 398.06L257.307 258.667"
+                    fill="#FFF"
+                  />
+                </svg>
+                <span>Telegram Channel</span>
+              </a>
+            </li>
+  
+            <li class="geex-sidebar__menu__item">
+              <a href="{% url 'terms' %}" class="geex-sidebar__menu__link">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 512 512"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 0C114.617 0 0 114.615 0 256s114.617 256 256 256 256-114.615 256-256S397.383 0 256 0zm0 471.838c-121.924 0-221.839-99.915-221.839-221.839S134.076 28.158 256 28.158 477.839 128.073 477.839 250 377.924 471.838 256 471.838z"
+                    fill="#F0F0F0"
+                  />
+                  <path
+                    d="M273.323 172.708c0-5.523-3.16-8.748-9.09-8.748h-27.158c-5.936 0-9.09 3.222-9.09 8.748v152.983c0 5.536 3.154 8.76 9.09 8.76h27.158c5.929 0 9.09-3.224 9.09-8.76V172.708zM243.055 304.707c-2.79 2.858-6.554 4.27-11.366 4.27-4.922 0-8.672-1.412-11.293-4.27l-21.417-22.045v31.573c0 1.926-.69 3.563-2.082 4.992-1.39 1.422-3.037 2.14-4.945 2.14h-17.517c-1.903 0-3.549-.718-4.945-2.14-1.391-1.429-2.081-3.066-2.081-4.992v-82.997c0-1.927.69-3.563 2.081-4.993 1.396-1.423 3.042-2.137 4.945-2.137h17.517c1.908 0 3.555.71 4.945 2.137 1.392 1.43 2.082 3.066 2.082 4.993v29.981l21.417-22.042c2.62-2.858 6.371-4.287 11.293-4.287 4.812 0 8.576 1.429 11.366 4.287l20.065 20.635c2.789 2.857 4.191 6.375 4.191 10.555s-1.401 7.701-4.191 10.56l-20.065 20.636z"
+                    fill="#5B5B5B"
+                  />
+                </svg>
+                <span>Terms</span>
+              </a>
+            </li>
           </ul>
         </nav>
         <div class="geex-sidebar__footer">
-          <span class="geex-sidebar__footer__title">Geex Modern Dashboard</span>
+          <span class="geex-sidebar__footer__title">Scrapleet Dashboard</span>
           <p class="geex-sidebar__footer__copyright">
             © 2024 All Rights Reserved
           </p>
           <p class="geex-sidebar__footer__author">
-            Made with <span class="heart-icon">♥</span> by
-            <a href="#">JEXCEL</a>
+            Made with <span class="heart-icon">♥</span> by <a href="#">JEXCEL</a>
           </p>
         </div>
       </div>

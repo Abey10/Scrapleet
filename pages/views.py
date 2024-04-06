@@ -112,3 +112,89 @@ def support(request):
     user_profile = UserProfile.objects.get(user=request.user)
     context = {'user_profile': user_profile}
     return render(request, 'app/help.html', context)
+
+
+@login_required(login_url='login')
+def addfund(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    context = {'user_profile': user_profile}
+    return render(request, 'app/addfund.html', context)
+
+
+@login_required(login_url='login')
+def orders(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    context = {'user_profile': user_profile}
+    return render(request, 'app/orders.html', context)
+
+
+@login_required(login_url='login')
+def new_orders(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    context = {'user_profile': user_profile}
+    return render(request, 'app/new_orders.html', context)
+
+
+import requests
+from django.shortcuts import render
+from .models import Service  
+
+@login_required(login_url='login')
+def services(request):
+    # Fetch data from SMMStone API
+    api_url = 'https://smmstone.com/api/v2'
+    api_key = '8103854ffdc487739b71d64fcc4c1806'
+    payload = {'key': api_key, 'action': 'services'}
+    response = requests.get(api_url, params=payload)
+    data = response.json()
+
+    # Store fetched data in models
+    for item in data:
+        service = Service.objects.create(
+            service_id=item['service'],
+            name=item['name'],
+            type=item['type'],
+            rate=item['rate'],
+            min=item['min'],
+            max=item['max'],
+            dripfeed=item['dripfeed'],
+            refill=item['refill'],
+            cancel=item['cancel'],
+            category=item['category']
+        )
+
+    # Fetch all services from your database
+    services = Service.objects.all()
+
+    # Pass services data to the template for rendering
+    context = {'services': services}
+    return render(request, 'app/services.html', context)
+
+
+
+@login_required(login_url='login')
+def mass_orders(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    context = {'user_profile': user_profile}
+    return render(request, 'app/mass_orders.html', context)
+
+
+@login_required(login_url='login')
+def makemoney(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    context = {'user_profile': user_profile}
+    return render(request, 'app/makemoney.html', context)
+
+
+@login_required(login_url='login')
+def howtouse(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    context = {'user_profile': user_profile}
+    return render(request, 'app/howtouse.html', context)
+
+
+@login_required(login_url='login')
+def update(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    context = {'user_profile': user_profile}
+    return render(request, 'app/update.html', context)

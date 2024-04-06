@@ -11,3 +11,22 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+    
+
+class Service(models.Model):
+    service_id = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    type = models.CharField(max_length=255)
+    rate = models.FloatField() 
+    min = models.IntegerField()
+    max = models.IntegerField()
+    dripfeed = models.BooleanField()
+    refill = models.BooleanField()
+    cancel = models.BooleanField()
+    category = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
