@@ -1,33 +1,5 @@
 {% extends 'app/base.html' %} {% load static %}
-<style>
-  /* Style for the table */
-.services-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
 
-.services-table th,
-.services-table td {
-  padding: 8px;
-  border: 1px solid #ddd;
-}
-
-.services-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-/* Responsive styles */
-@media only screen and (max-width: 600px) {
-  .services-table th,
-  .services-table td {
-    padding: 4px;
-    font-size: 12px;
-  }
-}
-
-</style>
 <main class="geex-main-content">
   {% block content %}
   <div class="geex-sidebar">
@@ -1163,39 +1135,31 @@
     <div class="geex-content__section geex-content__blank">
         <div class="geex-content__error__wrapper">
           <!-- <div class="geex-content__error__content"></div> -->
-          <h1 style="margin-bottom: 20px;">All Services</h1>
-          <table class="services-table">
+          <h1 style="margin-bottom: 20px; text-align: center;">All Services</h1>
+          <table class="services-table" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
             <thead>
-              <tr>
-                <th>Service ID</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Rate</th>
-                <th>Min</th>
-                <th>Max</th>
-                <th>Dripfeed</th>
-                <th>Refill</th>
-                <th>Cancel</th>
-                <th>Category</th>
+              <tr style="background-color: purple;">
+                <th style="padding: 8px; border: 1px solid #ddd; color: white;">ID</th>
+                <th style="padding: 8px; border: 1px solid #ddd; color: white;">Name</th>
+                <th style="padding: 8px; border: 1px solid #ddd; color: white;">Type</th>
+                <th style="padding: 8px; border: 1px solid #ddd; color: white;">Rate</th>
+                <th style="padding: 8px; border: 1px solid #ddd; color: white; ">Min</th>
+                <th style="padding: 8px; border: 1px solid #ddd; color: white;">Max</th>
               </tr>
             </thead>
             <tbody>
               {% for service in services %}
               <tr>
-                <td>{{ service.service_id }}</td>
-                <td>{{ service.name }}</td>
-                <td>{{ service.type }}</td>
-                <td>{{ service.rate }}</td>
-                <td>{{ service.min }}</td>
-                <td>{{ service.max }}</td>
-                <td>{{ service.dripfeed }}</td>
-                <td>{{ service.refill }}</td>
-                <td>{{ service.cancel }}</td>
-                <td>{{ service.category }}</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{{ service.service }}</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{{ service.name }}</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{{ service.type }}</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{{ service.rate }}</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{{ service.min }}</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{{ service.max }}</td>
               </tr>
               {% endfor %}
             </tbody>
-          </table>         
+          </table>
         </div>
       </div>
   </div>

@@ -8,9 +8,15 @@ from .forms import BlogForm
 
 @login_required(login_url='login')
 def home(request):
+    # Fetch data from SMMStone API
+    api_url = 'https://smmstone.com/api/v2'
+    api_key = '8103854ffdc487739b71d64fcc4c1806'
+    payload = {'key': api_key, 'action': 'services'}
+    response = requests.get(api_url, params=payload)
+    data = response.json()
     # Fetch user profile details
     user_profile = UserProfile.objects.get(user=request.user)
-    context = {'user_profile': user_profile}
+    context = {'user_profile': user_profile, 'services': data}
     return render(request, 'app/index-2.html', context)
 
 
@@ -139,6 +145,7 @@ import requests
 from django.shortcuts import render
 from .models import Service  
 
+
 @login_required(login_url='login')
 def services(request):
     # Fetch data from SMMStone API
@@ -148,26 +155,8 @@ def services(request):
     response = requests.get(api_url, params=payload)
     data = response.json()
 
-    # Store fetched data in models
-    for item in data:
-        service = Service.objects.create(
-            service_id=item['service'],
-            name=item['name'],
-            type=item['type'],
-            rate=item['rate'],
-            min=item['min'],
-            max=item['max'],
-            dripfeed=item['dripfeed'],
-            refill=item['refill'],
-            cancel=item['cancel'],
-            category=item['category']
-        )
-
-    # Fetch all services from your database
-    services = Service.objects.all()
-
-    # Pass services data to the template for rendering
-    context = {'services': services}
+    # Pass fetched services data to the template for rendering
+    context = {'services': data}
     return render(request, 'app/services.html', context)
 
 
